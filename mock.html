@@ -211,6 +211,8 @@
         display: flex;
         /* background-color: rgb(14, 27, 209); */
         background-image: linear-gradient(to bottom right, rgb(64, 3, 231), violeT);
+        /* background-image: linear-gradient(to bottom right, rgb(17, 240, 103), rgb(255, 255, 255)); */
+
     }
 
     .sidebar {
@@ -444,6 +446,7 @@
             if (--remaining_time < 0) {
                 clearInterval(timer_set);
                 document.getElementById("Timer").innerHTML = "00:00:00";
+                submit_it();
             }
 
         }, 1000);
@@ -460,8 +463,8 @@
             button.className = 'question_no_sidebar';
             console.log(questions[ij - 1])
             button.onclick = function () { // this function is giving error
-                // currIndex = ij-1;
-                // showQuestion(currIndex[ij - 1]);
+                currIndex = ij-1;
+                showQuestion(currIndex[ij - 1]);
             };
 
             console.log(ij)
@@ -604,6 +607,28 @@
                 question_no_sidebar[currIndex].style.backgroundColor = 'blue';
             }
         });
+
+
+        function submit_it(){
+            let correct = 0, wrong = 0, unanswered = 0;
+            for (let index = 0; index < l; index++) {
+                if (store[index] != -1 && store[index] + 1 == questions[index].answer) {
+                    correct++;
+                }
+                else if (store[index] != -1 && store[index] + 1 != questions[index].answer) {
+                    wrong++;
+                }
+                else
+                    unanswered++;
+            }
+            console.log(correct)
+            console.log(wrong)
+            console.log(unanswered)
+            remove_sidebar_button_color();
+            localStorage.clear();
+            result(correct, wrong, unanswered);
+
+        }
         save.addEventListener('click', function run() {
             var answer_ques = 0;
             for (let index = 0; index < answered.length; index++) {
@@ -623,6 +648,7 @@
                 console.log(store);
             }
             check_attempted();
+            
 
         });
 
@@ -641,23 +667,8 @@
         }
 
         submit.addEventListener('click', function run() {
-            let correct = 0, wrong = 0, unanswered = 0;
-            for (let index = 0; index < l; index++) {
-                if (store[index] != -1 && store[index] + 1 == questions[index].answer) {
-                    correct++;
-                }
-                else if (store[index] != -1 && store[index] + 1 != questions[index].answer) {
-                    wrong++;
-                }
-                else
-                    unanswered++;
-            }
-            console.log(correct)
-            console.log(wrong)
-            console.log(unanswered)
-            remove_sidebar_button_color();
-            localStorage.clear();
-            result(correct, wrong, unanswered);
+            submit_it();
+           
 
         });
 
