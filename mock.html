@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <div id="Test-name">
+            <p>Mock 01-(MATHEMATICS)</p>
+        </div>
+        <div id="attempt">
+            <p>Attempted :</p>
+            <p id="up">10</p>
+            <p>/</p>
+            <p id="down">20</p>
+        </div>
+        <div id="Timer">
+            <p>00:00:00</p>
+        </div>
+        <div id="reset">
+            <p>Reset</p>
+        </div>
+
+    </div>
+    <div class="mid">
+        <div class="sidebar">
+            <button id="index">1</button>
+            <button id="index">2</button>
+            <button id="index">3</button>
+            <button id="index">4</button>
+            <button id="index">5</button>
+            <button id="index">6</button>
+            <button id="index">7</button>
+            <button id="index">8</button>
+            <button id="index">9</button>
+            <button id="index">10</button>
+            <button id="index">11</button>
+            <button id="index">12</button>
+            <button id="index">13</button>
+            <button id="index">14</button>
+            <button id="index">15</button>
+            <button id="index">16</button>
+            <button id="index">17</button>
+            <button id="index">18</button>
+            <button id="index">19</button>
+            <button id="index">20</button>
+            <button id="index">21</button>
+            <button id="index">22</button>
+            <button id="index">23</button>
+            <button id="index">24</button>
+            <button id="index">25</button>
+            <button id="index">26</button>
+            <button id="index">27</button>
+            <button id="index">28</button>
+            <button id="index">29</button>
+            <button id="index">30</button>
+        </div>
+        <div class="container">
+            <div id="question">
+                <p id="qno">1. </p>
+                <p id="q-contain">SEE YOU NEXT TIME</p>
+            </div>
+            <div class="keys">
+                <div class="option" >
+                    <p id="no">1. </p>
+                    <p id="option1"></p>
+                </div>
+                <div class="option" >
+                    <p id="no">2. </p>
+                    <p id="option2"></p>
+                </div>
+                <div class="option" >
+                    <p id="no">3. </p>
+                    <p id="option3"></p>
+                </div>
+                <div class="option" >
+                    <p id="no">4. </p>
+                    <p id="option4"></p>
+                </div>
+
+            </div>
+            <div id="nxt-prev">
+                <div class="np" id="prev">
+                    <p>PREV</p>
+                </div>
+                <div class="np" id="next">
+                    <p>NEXT</p>
+                </div>
+                <div class="np" id="save">
+                    <p>SAVE</p>
+                </div>
+                <div class="np" id="submit">
+                    <p>SUBMIT</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<style>
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        font-family: Gotham Rounded;
+        padding: 0;
+        margin: 0;
+    }
+
+    .header {
+        width: 100vw;
+        height: 7vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: lightslategray;
+        color: lightskyblue;
+    }
+
+    #Test-name {
+        margin-left: 100px;
+        padding: 5px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    #attempt {
+        display: flex;
+        color: white;
+        font-size: large;
+        font-weight: bold;
+
+    }
+
+    #Timer {
+        margin-right: 100px;
+        padding: 5px;
+        font-size: 25px;
+        font-weight: bold;
+        border: 2px solid rgb(12, 4, 22);
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+    }
+    #reset
+    {
+        padding-right: 100px;
+        font-weight: bold;
+        font-size: medium;
+    }
+    .mid {
+        display: flex;
+        background-color: gainsboro;
+    }
+
+    .sidebar {
+        width: 5vw;
+        height: 93vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+        background-color: white;
+    }
+
+    #index {
+        width: 3vw;
+        margin: 5px;
+        padding: 5px 5px 5px 5px;
+        border: 2px solid rgb(12, 4, 22);
+        font-weight: bold;
+        font-size: small;
+    }
+
+    .container {
+        width: 95vw;
+        height: 93vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #question {
+        margin: 50px 50px 10px 50px;
+        padding: 100px;
+        font-size: large;
+        font-weight: bold;
+        width: 60%;
+        height: 270px;
+        border: 2px solid gray;
+        border-radius: 10px;
+        background-color: white;
+        display: flex;
+    }
+
+    #qno {
+        margin-right: 10px;
+    }
+
+    .keys {
+        width: 60%;
+        height: 300px;
+        border: 2px solid gray;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        background-color: white;
+    }
+
+    .option {
+        width: 30%;
+        margin: 15px 10px 10px 110px;
+        padding: 15px;
+        display: flex;
+        font-size: medium;
+        font-weight: bold;
+        border-radius: 5px;
+        background-color: lightblue;
+    }
+
+
+    #no
+    {
+        padding-right: 15px;;
+    }
+    #nxt-prev {
+        width: 60%;
+        height: 100px;
+        margin: 15px;
+        border: 2px solid gray;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        background-color: white;
+    }
+
+    .np {
+        width: 100px;
+        height: 45px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgb(12, 4, 22);
+        border-radius: 20px;
+    }
+</style>
+
+<script>
+    fetch("questions.json").then(res => {
+        console.log(res)
+        return res.json()
+    }).then(loadedQuestions => {
+        start(loadedQuestions)
+    });
+    reset.addEventListener('click', function run() {
+            localStorage.clear();
+        });
+
+    function start(questions) {
+        
+        let l = questions.length;
+        let op1 = document.getElementById('option1')
+        let op2 = document.getElementById('option2')
+        let op3 = document.getElementById('option3')
+        let op4 = document.getElementById('option4')
+        let q = document.getElementById('q-contain')
+        let next = document.getElementById('next')
+        let prev = document.getElementById('prev')
+        let save = document.getElementById('save')
+        let submit = document.getElementById('submit')
+        let reset = document.getElementById('reset')
+        
+        let store = [], currIndex = 0;
+
+        let end = localStorage.getItem('end') ? JSON.parse(localStorage.getItem('end')) : 0;
+        let B = localStorage.getItem('curr') ? JSON.parse(localStorage.getItem('curr')) : 0;
+        let A = localStorage.getItem('save') ? JSON.parse(localStorage.getItem('save')) : [];
+        if (end == 1) {
+            return 0;
+            console.log("End")
+        }
+        if (A.length == 0) {
+            for (let index = 0; index < l; index++) store[index] = -1;
+            localStorage.setItem('save', JSON.stringify(store));
+            localStorage.setItem('curr', JSON.stringify(currIndex));
+        }
+        else {
+            currIndex = B
+            store = A;
+        }
+
+        showQuestion(questions[currIndex])
+
+        let answered = [0, 0, 0, 0]
+
+        function showQuestion(quest) {
+            q.innerText = quest.question
+            op1.innerText = quest.choice1
+            op2.innerText = quest.choice2
+            op3.innerText = quest.choice3
+            op4.innerText = quest.choice4
+
+            op1.addEventListener('click', function run() {
+                for (let index = 0; index < answered.length; index++)
+                    answered[index] = 0;
+                answered[0] = 1;
+            });
+            op2.addEventListener('click', function run() {
+                for (let index = 0; index < answered.length; index++)
+                    answered[index] = 0;
+                answered[1] = 1;
+            });
+            op3.addEventListener('click', function run() {
+                for (let index = 0; index < answered.length; index++)
+                    answered[index] = 0;
+                answered[2] = 1;
+            });
+            op4.addEventListener('click', function run() {
+                for (let index = 0; index < answered.length; index++)
+                    answered[index] = 0;
+                answered[3] = 1;
+            });
+        }
+
+        next.addEventListener('click', function run() {
+            if (currIndex < l) {
+                currIndex++;
+                localStorage.setItem('curr', JSON.stringify(currIndex));
+                showQuestion(questions[currIndex])
+            }
+        });
+        prev.addEventListener('click', function run() {
+            if (currIndex > 0) {
+                currIndex--;
+                localStorage.setItem('curr', JSON.stringify(currIndex));
+                showQuestion(questions[currIndex])
+            }
+        });
+        save.addEventListener('click', function run() {
+            for (let index = 0; index < answered.length; index++) {
+                if (answered[index] == 1) {
+                    store[currIndex] = index;
+                    localStorage.setItem('save', JSON.stringify(store));
+                    console.log(answered);
+                    console.log(store);
+                    break;
+                }
+            }
+        });
+        submit.addEventListener('click', function run() {
+            let correct = 0, wrong = 0, unanswered = 0;
+            for (let index = 0; index < l; index++) {
+                if (store[index] != -1 && store[index] + 1 == questions[index].answer) {
+                    correct++;
+                }
+                else if (store[index] != -1 && store[index] + 1 == questions[index].answer) {
+                    wrong++;
+                }
+                else
+                    unanswered++;
+            }
+            console.log(correct)
+            console.log(wrong)
+            console.log(unanswered)
+            localStorage.clear();
+            result(correct, wrong, unanswered);
+
+        });
+        function result(c, w, u) {
+            op1.innerText = "Total Questions : " + (c + w + u);
+            op2.innerText = "Correct : " + c;
+            op3.innerText = "Wrong : " + w;
+            op4.innerText = "Unanswered: " + u;
+            q.innerText = "RESULT OVERVIEW";
+            localStorage.setItem('end', JSON.stringify(1));
+        }
+        
+    }
+</script>
