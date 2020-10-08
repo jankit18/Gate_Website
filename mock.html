@@ -32,36 +32,7 @@
     </div>
     <div class="mid">
         <div class="sidebar" id="sidebar_id">
-            <!-- <p id="index">H</p> -->
-            <!-- <button id="index">2</button>
-            <button id="index">3</button>
-            <button id="index">4</button>
-            <button id="index">5</button>
-            <button id="index">6</button>
-            <button id="index">7</button>
-            <button id="index">8</button>
-            <button id="index">9</button>
-            <button id="index">10</button>
-            <button id="index">11</button>
-            <button id="index">12</button>
-            <button id="index">13</button>
-            <button id="index">14</button>
-            <button id="index">15</button>
-            <button id="index">16</button>
-            <button id="index">17</button>
-            <button id="index">18</button>
-            <button id="index">19</button>
-            <button id="index">20</button>
-            <button id="index">21</button>
-            <button id="index">22</button>
-            <button id="index">23</button>
-            <button id="index">24</button>
-            <button id="index">25</button>
-            <button id="index">26</button>
-            <button id="index">27</button>
-            <button id="index">28</button>
-            <button id="index">29</button>
-            <button id="index">30</button> -->
+            
         </div>
         <div class="container">
             <div id="question">
@@ -363,7 +334,7 @@
 </style>
 
 <script>
-    var Exam_Time = Math.floor(30);
+    var Exam_Time = Math.floor(0);
 
     fetch("questions.json").then(res => {
         console.log(res)
@@ -384,7 +355,7 @@
 
         let l = questions.length;
         console.log("Start")
-        console.log(l)
+        //console.log(l)
         let op1 = document.getElementById('option1')
         let op2 = document.getElementById('option2')
         let op3 = document.getElementById('option3')
@@ -400,7 +371,7 @@
         let reset = document.getElementById('reset')
         let up = document.getElementById('up')
         let down = document.getElementById('down')
-
+        
 
 
         let store = [], currIndex = 0, remaining_time=Exam_Time;
@@ -412,7 +383,7 @@
 
         if (end == 1) {
             return 0;
-            console.log("End")
+            //console.log("End")
         }
 
         if (A.length == 0) {
@@ -435,7 +406,7 @@
             const minutes = Math.floor(remaining_time % 3600);
             const minutes_main = Math.floor(minutes / 60);
             const seconds_main = Math.floor(minutes % 60);
-            console.log(hours_main+":"+minutes_main+":"+seconds_main)
+           // console.log(hours_main+":"+minutes_main+":"+seconds_main)
 
             document.getElementById("Timer").innerHTML = hours_main + ":"
                 + minutes_main + ":" + seconds_main;
@@ -450,66 +421,50 @@
             }
 
         }, 1000);
-
-
+                      
         // Creating side bar buttons dynamically
         for (var ij = 1; ij <= l; ij++) {
 
-            var button_id = "Question_No_" + ij.toString();
-
+            var button_id =  ij.toString();
             var button = document.createElement('button');
             button.type = 'button';
             button.innerHTML = ij;
             button.className = 'question_no_sidebar';
-            console.log(questions[ij - 1])
-            button.onclick = function () { // this function is giving error
-                currIndex = ij-1;
-                showQuestion(currIndex[ij - 1]);
-            };
-
-            console.log(ij)
-            console.log(button_id)
-
+            button.id=button_id;
+            
             var sidebar_element = document.getElementById('sidebar_id')
             sidebar_element.appendChild(button);
-        }
-
-        let question_no_sidebar = document.getElementsByClassName('question_no_sidebar');
-
-        function reset_sidebar_button_color() {
-            for (var i = 0; i < l; i++) {
-                question_no_sidebar[i].style.color = 'black';
-                question_no_sidebar[i].style.backgroundColor = 'white';
-
+            if(ij==l)
+            {
+             showQuestion(questions[currIndex]);
             }
         }
 
-        reset_sidebar_button_color()
-        question_no_sidebar[currIndex].style.color = 'white';
-        question_no_sidebar[currIndex].style.backgroundColor = 'blue';
+        let side_parent = document.querySelector('#sidebar_id')
+        side_parent.addEventListener("click",side_color_change, false)
+        function side_color_change(e){
+            if(e.target!=e.currentTarget)
+            {
+                console.log(e.target.id);
+                side_color_reset()
+                currIndex = e.target.id-'0';
+                currIndex--;
+                localStorage.setItem('curr', JSON.stringify(currIndex));
+                showQuestion(questions[currIndex]);
+            }
+        } 
 
-        question_no_sidebar[0].addEventListener('click', function run() {
-            reset_sidebar_button_color();
-            currIndex = 0;
-            question_no_sidebar[currIndex].style.color = 'white';
-            question_no_sidebar[currIndex].style.backgroundColor = 'blue';
-            showQuestion(questions[currIndex])
-        });
-        question_no_sidebar[1].addEventListener('click', function run() {
-            reset_sidebar_button_color();
-            currIndex = 1;
-            question_no_sidebar[currIndex].style.color = 'white';
-            question_no_sidebar[currIndex].style.backgroundColor = 'blue';
-            showQuestion(questions[currIndex])
-        });
-        question_no_sidebar[2].addEventListener('click', function run() {
-            reset_sidebar_button_color();
-            currIndex = 2;
-            question_no_sidebar[currIndex].style.color = 'white';
-            question_no_sidebar[currIndex].style.backgroundColor = 'blue';
-            showQuestion(questions[currIndex])
-        });
-
+        let question_no_sidebar = document.getElementsByClassName('question_no_sidebar');
+        function side_color_reset(){
+            
+                for(let i=0;i<l;i++)
+                {
+                    question_no_sidebar[i].style.color = 'blue';
+                    question_no_sidebar[i].style.backgroundColor = 'white';
+                }
+            
+        }     
+        
         down.innerText = l;
         check_attempted();
         function check_attempted() {
@@ -523,26 +478,9 @@
             up.innerText = attempted;
         }
 
-        showQuestion(questions[currIndex])
-
+    
         let answered = [0, 0, 0, 0]
 
-        function reset_color() {
-            options_class[0].style.backgroundColor = 'rgba(178, 78, 236, 0.356)'
-            options_class[1].style.backgroundColor = 'rgba(178, 78, 236, 0.356)'
-            options_class[2].style.backgroundColor = 'rgba(178, 78, 236, 0.356)'
-            options_class[3].style.backgroundColor = 'rgba(178, 78, 236, 0.356)'
-            options_class[0].style.color = 'black'
-            options_class[1].style.color = 'black'
-            options_class[2].style.color = 'black'
-            options_class[3].style.color = 'black'
-        }
-        function change_color(coount) {
-            reset_color()
-            options_class[coount].style.backgroundColor = 'blue'
-            options_class[coount].style.color = 'white'
-
-        }
         function showQuestion(quest) {
             q.innerText = quest.question
             op1.innerText = quest.choice1
@@ -550,15 +488,20 @@
             op3.innerText = quest.choice3
             op4.innerText = quest.choice4
             q_no.innerText = currIndex + 1;
-            console.log(store[currIndex])
 
+            let selec= currIndex+1;
+
+            console.log(selec);
+            let chng = document.getElementById(String(selec));
+            console.log(chng);
+            chng.style.color = 'white';
+            chng.style.backgroundColor = 'blue';
             if ((store[currIndex] >= 0) && (store[currIndex] <= 3)) {
                 change_color(store[currIndex])
             }
-            else {
-                reset_color()
-            }
-
+            else
+             reset_color()
+           
             options_class[0].addEventListener('click', function run() {
                 for (let index = 0; index < answered.length; index++)
                     answered[index] = 0;
@@ -607,6 +550,21 @@
                 question_no_sidebar[currIndex].style.backgroundColor = 'blue';
             }
         });
+        
+        function reset_color() {
+            for( i=0;i<4;i++)
+            {
+                options_class[i].style.backgroundColor = 'rgba(178, 78, 236, 0.356)'
+                options_class[i].style.color = 'black'
+
+            }
+        }
+        function change_color(coount) {
+            reset_color()
+            options_class[coount].style.backgroundColor = 'blue'
+            options_class[coount].style.color = 'white'
+
+        }
 
 
         function submit_it(){
@@ -621,9 +579,9 @@
                 else
                     unanswered++;
             }
-            console.log(correct)
-            console.log(wrong)
-            console.log(unanswered)
+            //console.log(correct)
+            //console.log(wrong)
+            //console.log(unanswered)
             remove_sidebar_button_color();
             localStorage.clear();
             result(correct, wrong, unanswered);
@@ -635,8 +593,8 @@
                 if (answered[index] == 1) {
                     store[currIndex] = index;
                     localStorage.setItem('save', JSON.stringify(store));
-                    console.log(answered);
-                    console.log(store);
+                    //console.log(answered);
+                    //console.log(store);
                     answer_ques = 1;
                     break;
                 }
@@ -644,8 +602,8 @@
             if (answer_ques == 0) {
                 store[currIndex] = -1;
                 localStorage.setItem('save', JSON.stringify(store));
-                console.log(answered);
-                console.log(store);
+                //console.log(answered);
+                //console.log(store);
             }
             check_attempted();
             
@@ -671,9 +629,6 @@
            
 
         });
-
-
-
         function result(c, w, u) {
             op1.innerText = "Total Questions : " + (c + w + u);
             op2.innerText = "Correct : " + c;
