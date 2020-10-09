@@ -1,5 +1,4 @@
-
-    *,
+*,
     *::before,
     *::after {
         box-sizing: border-box;
@@ -14,8 +13,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: rgb(64, 3, 231);
-        color: lightskyblue;
+        background-image: linear-gradient(to  right, rgb(132, 238, 180),rgb(190, 210, 240));
+        color: rgb(6, 44, 28);
     }
 
     #Test-name {
@@ -23,13 +22,13 @@
         padding: 5px;
         font-size: 25px;
         font-weight: bold;
-        background-color: rgb(64, 3, 231);
+        background-color:inherit;
 
     }
 
     #attempt {
         display: flex;
-        color: white;
+        color:rgb(6, 44, 28);
         font-size: large;
         font-weight: bold;
 
@@ -60,6 +59,7 @@
 
         border: 2px solid rgb(255, 255, 255);
         border-radius: 10px;
+        display: none;
     }
 
     #reset:hover {
@@ -79,9 +79,8 @@
         padding: 7px;
 
         margin-right: 5px;
-        background-color: white;
-        color: rgb(64, 3, 231);
-        ;
+        background-color:inherit;
+        color: rgb(6, 44, 28);
         border: 2px solid rgb(255, 255, 255);
         border-radius: 10px;
     }
@@ -89,7 +88,7 @@
     #submit:hover {
         border: 2px solid rgb(255, 255, 255);
         color: rgb(255, 255, 255);
-        background-color: rgb(64, 3, 231);
+        background-color:rgb(6, 44, 28);
     }
 
 
@@ -97,19 +96,17 @@
     .mid {
         display: flex;
         /* background-color: rgb(14, 27, 209); */
-        background-image: linear-gradient(to bottom right, rgb(64, 3, 231), violeT);
+        background-image: linear-gradient(to bottom , rgb(229, 238, 237), rgb(124, 129, 128));
         /* background-image: linear-gradient(to bottom right, rgb(17, 240, 103), rgb(255, 255, 255)); */
 
     }
 
     .sidebar {
-        width: 5vw;
+        width: 9vw;
         height: 93vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block;
         overflow-y: scroll;
-        background-color: white;
+        background-color: inherit;
     }
 
     /* #index {
@@ -129,9 +126,9 @@
 
     .question_no_sidebar {
         width: 3vw;
-        margin: 5px;
+        margin: 10px 0px 10px 13px;
         padding: 5px 5px 5px 5px;
-        border: 2px solid rgb(36, 33, 235);
+        border: 1px solid rgb(116, 129, 148);
         font-weight: bold;
         font-size: small;
         cursor: pointer;
@@ -139,12 +136,12 @@
     }
 
     .question_no_sidebar:hover {
-        background-color: rgba(78, 204, 236, 0.356);
+        background-color: rgba(112, 137, 143, 0.356);
         border: 2px solid rgb(0, 0, 0);
     }
 
     .container {
-        width: 95vw;
+        width: 90vw;
         height: 93vh;
         display: flex;
         flex-direction: column;
@@ -159,7 +156,7 @@
         width: 60%;
         height: 270px;
         border: 2px solid gray;
-        border-radius: 10px;
+        border-radius: 1px;
         background-color: white;
         display: flex;
     }
@@ -168,22 +165,22 @@
         margin-right: 10px;
     }
 
-    .keys {
+    #keys {
         width: 60%;
-        height: 300px;
+        height: 310px;
         border: 2px solid gray;
         display: flex;
         flex-direction: column;
-        border-radius: 10px;
+        border-radius: 1px;
         background-color: white;
     }
 
     .option {
         width: 30%;
-        margin: 15px 10px 10px 110px;
+        margin: 15px 10px 5px 110px;
         padding: 15px;
         display: flex;
-        font-size: medium;
+        font-size: large;
         font-weight: bold;
         border-radius: 5px;
         background-color: rgba(178, 78, 236, 0.356);
@@ -198,8 +195,13 @@
 
 
     #no {
+        padding: 1px 0px 1px 15px;
+        margin-right: 25px;
+        border-radius: 1px;
+        color: blanchedalmond;
+        background-color: rgb(20, 10, 29);
         padding-right: 15px;
-
+    
     }
 
     #nxt-prev {
@@ -220,13 +222,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid rgb(112, 26, 218);
+        border: 2px solid rgb(82, 50, 121);
         border-radius: 20px;
         cursor: pointer;
     }
 
     .np:hover {
-        background-color: rgb(112, 26, 218);
+        background-color: rgb(82, 50, 121);
         color: white;
 
     }
@@ -246,5 +248,3 @@
     #clear:hover {
         margin-bottom: 1.76em;
     }
-
-
