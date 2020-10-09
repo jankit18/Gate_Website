@@ -39,7 +39,7 @@
                 <p id="qno">Well Done ....................</p>
                 <p id="q-contain">SEE YOU NEXT TIME</p>
             </div>
-            <div class="keys">
+            <div id="keys">
                 <div class="option">
                     <p id="no">1. </p>
                     <p id="option1"></p>
@@ -253,7 +253,7 @@
         margin-right: 10px;
     }
 
-    .keys {
+    #keys {
         width: 60%;
         height: 300px;
         border: 2px solid gray;
@@ -381,8 +381,10 @@
         let A = localStorage.getItem('save') ? JSON.parse(localStorage.getItem('save')) : [];
 
         if (end == 1) {
+            console.log("End")
+            remove_up()
             return 0;
-            //console.log("End")
+            
         }
 
         if (A.length == 0) {
@@ -643,16 +645,36 @@
         });
 
         function remove_sidebar_button_color() {
-            for (var i = l - 1; i >= 0; i--) {
-                question_no_sidebar[i].remove();
+            let side=document.getElementById("sidebar_id")
+            side.remove();
+            let nxt=document.getElementById("nxt-prev")
+            nxt.remove();
+            let time=document.getElementById("Timer")
+            time.remove();
+            let atmp=document.getElementById("attempt")
+            atmp.remove();
+            let qn=document.getElementById("question")
+            qn.style.width = "400px";
+            qn.style.height = "200px";
 
-            }
+        }
+        function remove_up() {
+            let side=document.getElementById("sidebar_id")
+            side.remove();
+            let nxt=document.getElementById("nxt-prev")
+            nxt.remove();
+            let time=document.getElementById("Timer")
+            time.remove();
+            let atmp=document.getElementById("attempt")
+            atmp.remove();
+            let ky=document.getElementById("keys")
+            ky.remove();
+            let sb=document.getElementById("submit")
+            sb.remove();
         }
 
         submit.addEventListener('click', function run() {
             submit_it();
-
-
         });
 
         function result(c, w, u) {
