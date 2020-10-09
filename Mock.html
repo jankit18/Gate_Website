@@ -547,10 +547,10 @@
                 currIndex++;
                 localStorage.setItem('curr', JSON.stringify(currIndex));
                 showQuestion(questions[currIndex])
-                reset_sidebar_button_color();
+                side_color_reset()
 
                 question_no_sidebar[currIndex].style.color = 'white';
-                question_no_sidebar[currIndex].style.backgroundColor = 'blue';
+                question_no_sidebar[currIndex].style.backgroundColor = 'rgb(82, 50, 121)';
             }
         });
         prev.addEventListener('click', function run() {
@@ -558,10 +558,10 @@
                 currIndex--;
                 localStorage.setItem('curr', JSON.stringify(currIndex));
                 showQuestion(questions[currIndex])
-                reset_sidebar_button_color();
+                side_color_reset()
 
                 question_no_sidebar[currIndex].style.color = 'white';
-                question_no_sidebar[currIndex].style.backgroundColor = 'blue';
+                question_no_sidebar[currIndex].style.backgroundColor = 'rgb(82, 50, 121)';
             }
         });
 
