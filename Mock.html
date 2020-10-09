@@ -41,19 +41,19 @@
             </div>
             <div id="keys">
                 <div class="option">
-                    <p id="no">1. </p>
+                    <p id="no">1</p>
                     <p id="option1"></p>
                 </div>
                 <div class="option">
-                    <p id="no">2. </p>
+                    <p id="no">2</p>
                     <p id="option2"></p>
                 </div>
                 <div class="option">
-                    <p id="no">3. </p>
+                    <p id="no">3</p>
                     <p id="option3"></p>
                 </div>
                 <div class="option">
-                    <p id="no">4. </p>
+                    <p id="no">4</p>
                     <p id="option4"></p>
                 </div>
 
@@ -98,8 +98,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: rgb(64, 3, 231);
-        color: lightskyblue;
+        background-image: linear-gradient(to  right, rgb(132, 238, 180),rgb(190, 210, 240));
+        color: rgb(6, 44, 28);
     }
 
     #Test-name {
@@ -107,13 +107,13 @@
         padding: 5px;
         font-size: 25px;
         font-weight: bold;
-        background-color: rgb(64, 3, 231);
+        background-color:inherit;
 
     }
 
     #attempt {
         display: flex;
-        color: white;
+        color:rgb(6, 44, 28);
         font-size: large;
         font-weight: bold;
 
@@ -144,6 +144,7 @@
 
         border: 2px solid rgb(255, 255, 255);
         border-radius: 10px;
+        display: none;
     }
 
     #reset:hover {
@@ -163,9 +164,8 @@
         padding: 7px;
 
         margin-right: 5px;
-        background-color: white;
-        color: rgb(64, 3, 231);
-        ;
+        background-color:inherit;
+        color: rgb(6, 44, 28);
         border: 2px solid rgb(255, 255, 255);
         border-radius: 10px;
     }
@@ -173,7 +173,7 @@
     #submit:hover {
         border: 2px solid rgb(255, 255, 255);
         color: rgb(255, 255, 255);
-        background-color: rgb(64, 3, 231);
+        background-color:rgb(6, 44, 28);
     }
 
 
@@ -181,7 +181,7 @@
     .mid {
         display: flex;
         /* background-color: rgb(14, 27, 209); */
-        background-image: linear-gradient(to bottom right, rgb(64, 3, 231), violeT);
+        background-image: linear-gradient(to bottom right, rgb(229, 238, 237), rgb(124, 129, 128));
         /* background-image: linear-gradient(to bottom right, rgb(17, 240, 103), rgb(255, 255, 255)); */
 
     }
@@ -193,7 +193,7 @@
         flex-direction: column;
         align-items: center;
         overflow-y: scroll;
-        background-color: white;
+        background-color: inherit;
     }
 
     /* #index {
@@ -214,9 +214,9 @@
 
     .question_no_sidebar {
         width: 3vw;
-        margin: 5px;
+        margin: 6px;
         padding: 5px 5px 5px 5px;
-        border: 2px solid rgb(36, 33, 235);
+        border: 1px solid rgb(116, 129, 148);
         font-weight: bold;
         font-size: small;
         cursor: pointer;
@@ -224,7 +224,7 @@
     }
 
     .question_no_sidebar:hover {
-        background-color: rgba(78, 204, 236, 0.356);
+        background-color: rgba(112, 137, 143, 0.356);
         border: 2px solid rgb(0, 0, 0);
     }
 
@@ -244,7 +244,7 @@
         width: 60%;
         height: 270px;
         border: 2px solid gray;
-        border-radius: 10px;
+        border-radius: 1px;
         background-color: white;
         display: flex;
     }
@@ -255,20 +255,20 @@
 
     #keys {
         width: 60%;
-        height: 300px;
+        height: 310px;
         border: 2px solid gray;
         display: flex;
         flex-direction: column;
-        border-radius: 10px;
+        border-radius: 1px;
         background-color: white;
     }
 
     .option {
         width: 30%;
-        margin: 15px 10px 10px 110px;
+        margin: 15px 10px 5px 110px;
         padding: 15px;
         display: flex;
-        font-size: medium;
+        font-size: large;
         font-weight: bold;
         border-radius: 5px;
         background-color: rgba(178, 78, 236, 0.356);
@@ -283,8 +283,13 @@
 
 
     #no {
+        padding: 1px 0px 1px 15px;
+        margin-right: 25px;
+        border-radius: 1px;
+        color: blanchedalmond;
+        background-color: rgb(20, 10, 29);
         padding-right: 15px;
-
+    
     }
 
     #nxt-prev {
@@ -305,13 +310,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid rgb(112, 26, 218);
+        border: 2px solid rgb(82, 50, 121);
         border-radius: 20px;
         cursor: pointer;
     }
 
     .np:hover {
-        background-color: rgb(112, 26, 218);
+        background-color: rgb(82, 50, 121);
         color: white;
 
     }
@@ -504,7 +509,7 @@
             }
             else {
                 chng.style.color = 'white';
-                chng.style.backgroundColor = 'blue';
+                chng.style.backgroundColor = 'rgb(82, 50, 121)';
             }
 
             if ((store[currIndex] >= 0) && (store[currIndex] <= 3)) {
@@ -571,7 +576,7 @@
         }
         function change_color(coount) {
             reset_color()
-            options_class[coount].style.backgroundColor = 'blue'
+            options_class[coount].style.backgroundColor = 'rgb(82, 50, 121)'
             options_class[coount].style.color = 'white'
         }
 
@@ -637,7 +642,7 @@
             let chng = document.getElementById(String(selec));
             console.log(chng);
             chng.style.color = 'white';
-            chng.style.backgroundColor = 'blue';
+            chng.style.backgroundColor = 'rgb(82, 50, 121)';
             store[currIndex] = -1;
             localStorage.setItem('save', JSON.stringify(store));
             check_attempted()
@@ -671,6 +676,7 @@
             ky.remove();
             let sb=document.getElementById("submit")
             sb.remove();
+            reset.style.display="block";
         }
 
         submit.addEventListener('click', function run() {
@@ -692,6 +698,7 @@
             clear.remove();
             submit.remove();
             remaining_time = Math.floor(0);
+            reset.style.display="block";
         }
 
     }
