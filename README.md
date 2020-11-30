@@ -6,3 +6,5 @@ Required Add-on:
 - Gate-Calculator Integration.
 - Instruction and Marking panel overview.
 - More add-on to Result section.
+
+![alt text](https://drive.google.com/file/d/1lM0Qdus97fVXgCEJnsEGD-QlJmOWYajY/view?usp=sharing)
