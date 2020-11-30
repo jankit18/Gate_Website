@@ -7,4 +7,4 @@ Required Add-on:
 - Instruction and Marking panel overview.
 - More add-on to Result section.
 
-![alt text](https://github.com/[jankit18]/[Gate_Mock-Test_Platform]/Screenshot (368).png?raw=true)
+![alt text](https://github.com/[jankit18]/[Gate_Mock-Test_Platform]/image.png?raw=true)
