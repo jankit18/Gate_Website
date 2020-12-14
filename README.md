@@ -7,4 +7,4 @@ Required Add-on:
 - Instruction and Marking panel overview.
 - More add-on to Result section.
 
-![Screenshot](ScreenSht..png)
+![Screenshot](SS.png)
