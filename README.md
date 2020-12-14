@@ -7,4 +7,4 @@ Required Add-on:
 - Instruction and Marking panel overview.
 - More add-on to Result section.
 
-![Screenshot](image.png)
+![Screenshot](Demo.png)
